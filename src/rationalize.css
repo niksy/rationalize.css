@@ -1,0 +1,192 @@
+/**
+ * =============================================================================
+ * Base
+ * =============================================================================
+ */
+
+/**
+ * Use easier method for layout creation and modification.
+ */
+*, *:before, *:after {
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	        box-sizing:border-box;
+}
+
+/**
+ * 1. Display vertical scrollbar at all times.
+ * 2. Normalize global text color.
+ */
+html {
+	overflow-y:scroll; /* 1 */
+	color:#000; /* 2 */
+}
+
+/**
+ * Normalize global background color.
+ * It will propagate to `html` element.
+ */
+body {
+	background-color:#fff;
+}
+
+/**
+ * =============================================================================
+ * Typography
+ * =============================================================================
+ */
+
+/**
+ * Add help cursor for some elements.
+ */
+abbr[title], acronym[title], dfn {
+	cursor:help;
+}
+
+/**
+ * Improve horizontal rule display.
+ */
+hr {
+	display:block; padding:0; margin:1em 0;
+}
+
+/**
+ * =============================================================================
+ * Embedded content
+ * =============================================================================
+ */
+
+/**
+ * 1. Alternative text will be visually offset if images don’t load.
+ * 2. Remove the gap between images and the bottom of their containers.
+ * 3. Make images expand as large as their container, keeping the height
+ *    proportional to the width.
+ */
+img {
+	max-width:100%; height:auto; /* 3 */
+	font-style:italic; /* 1 */
+	vertical-align:bottom; /* 2 */
+}
+
+/**
+ * Fluid styles mess up Google Maps images
+ * so we have to reset them to inital state
+ */
+.gm-style img {
+	max-width:none;
+	vertical-align:baseline;
+}
+
+/**
+ * Remove the gap between elements and the bottom of their containers.
+ */
+object, embed {
+	vertical-align:bottom;
+}
+
+/**
+ * =============================================================================
+ * Forms
+ * =============================================================================
+ */
+
+/**
+ * Display ellipsis in placeholders so they don’t get cut off.
+ */
+::-webkit-input-placeholder {
+	text-overflow:ellipsis;
+}
+:-moz-placeholder {
+	text-overflow:ellipsis;
+}
+::-moz-placeholder {
+	text-overflow:ellipsis;
+}
+:-ms-input-placeholder {
+	text-overflow:ellipsis;
+}
+
+/**
+ * 1. Set sensible defaults for elements with invalid form input.
+ * 2. Set sensible styling for all browsers.
+ */
+input:invalid,
+textarea:invalid {
+	outline:0; /* 1 */
+	-webkit-box-shadow:0 0 4px #f00; /* 1 */
+	        box-shadow:0 0 4px #f00; /* 2 */
+}
+
+/**
+ * Give input@type="search" box sizing of border-box to have it visually
+ * consistent with the rest of form elements.
+ */
+input[type="search"] {
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	        box-sizing:border-box;
+}
+
+/**
+ * Line wrap text in `legend` for IE.
+ */
+legend {
+	display:table;
+}
+
+/**
+ * 1. Constraint `textarea` to vertical resize only.
+ * 2. A hack for HTML5 `contenteditable` attribute on mobile.
+ */
+textarea {
+	resize:vertical; /* 1 */
+}
+textarea[contenteditable] {
+	-webkit-appearance:none; /* 2 */
+}
+
+/**
+ * Set `select` background color to white because some OSs (e.g. Linux) don’t
+ * use it as default.
+ */
+select {
+	background-color:#fff;
+}
+
+/**
+ * Add pointer cursor to some form elements for better interactivity.
+ */
+select,
+label[for],
+label input,
+input[type="image"] {
+	cursor:pointer;
+}
+
+/**
+ * =============================================================================
+ * Accessibility
+ * =============================================================================
+ */
+
+/**
+ * Visually emphasize focused elements with custom tabindex which should
+ * be keyboard accessible.
+ */
+[tabindex="0"]:focus {
+	outline:thin dotted;
+}
+
+/**
+ * =============================================================================
+ * Responsive
+ * =============================================================================
+ */
+
+/**
+ * Get IE 10 Snap Mode to play nicely with `meta` viewport.
+ */
+@-webkit-viewport { width:device-width; }
+   @-moz-viewport { width:device-width; }
+    @-ms-viewport { width:device-width; }
+     @-o-viewport { width:device-width; }

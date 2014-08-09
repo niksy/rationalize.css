@@ -1,0 +1,14 @@
+.Test-sandbox-boxSizing {
+	width:100px; height:100px;
+	background:red;
+	border:5px solid green;
+	padding:10px;
+}
+
+.Test-sandbox-fluidImages {
+	width:200px;
+}
+
+.Test-sandbox-placeholderEllipsis input {
+	width:100px;
+}
