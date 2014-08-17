@@ -4,6 +4,19 @@
 	border:5px solid green;
 	padding:10px;
 }
+.Test-sandbox-boxSizing:before {
+	content:'';
+	display:block;
+	width:30px; height:30px;
+	background:pink;
+	border:5px solid blue;
+	padding:5px;
+}
+.Test-sandbox-boxSizingDefault {
+	-webkit-box-sizing:content-box;
+	   -moz-box-sizing:content-box;
+	        box-sizing:content-box;
+}
 
 .Test-sandbox-fluidImages {
 	width:200px;

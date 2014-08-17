@@ -11,9 +11,15 @@
   <h1 class="Test-title">rationalize.css tests</h1>
 
   <h2 class="Test-describe">Base</h2>
-  <h3 class="Test-it">All elements should have <code>box-sizing:border-box</code> and dimensions should 100x100</h3>
+  <h3 class="Test-it">All elements should have <code>box-sizing:border-box</code> and dimensions should be 100x100 (for generated content 30x30)</h3>
   <div class="Test-run">
     <div class="Test-sandbox-boxSizing"></div>
+  </div>
+  <h3 class="Test-it"><code>box-sizing:content-box</code> elements and their descendants should have default box model and dimensions should be 130x130 (for generated content 50x50)</h3>
+  <div class="Test-run">
+    <div class="Test-sandbox-boxSizingDefault">
+      <div class="Test-sandbox-boxSizing"></div>
+    </div>
   </div>
   <h3 class="Test-it"><code>html</code> should have <code>overflow-y:scroll</code> and black text color</h3>
   <div class="Test-run">
