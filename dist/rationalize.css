@@ -1,4 +1,4 @@
-/*! rationalize.css 0.1.1 - Opinionated additions to Normalize. | Author: Ivan Nikolić, 2014 | License: MIT */
+/*! rationalize.css 0.1.2 - Opinionated additions to Normalize. | Author: Ivan Nikolić, 2014 | License: MIT */
 /**
  * Use easier method for layout creation and modification.
  */
@@ -96,13 +96,13 @@ object, embed {
 ::-webkit-input-placeholder {
 	text-overflow:ellipsis;
 }
-:-moz-placeholder {
-	text-overflow:ellipsis;
-}
 ::-moz-placeholder {
 	text-overflow:ellipsis;
 }
 :-ms-input-placeholder {
+	text-overflow:ellipsis;
+}
+::placeholder {
 	text-overflow:ellipsis;
 }
 
@@ -113,7 +113,7 @@ object, embed {
 input:invalid,
 textarea:invalid {
 	outline:0; /* 1 */
-	-webkit-box-shadow:0 0 4px #f00; /* 1 */
+	-webkit-box-shadow:0 0 4px #f00;
 	        box-shadow:0 0 4px #f00; /* 2 */
 }
 
@@ -175,6 +175,13 @@ input[type="image"] {
  */
 [tabindex="0"]:focus {
 	outline:thin dotted;
+}
+
+/**
+ * Hide `[type="button"] when `.no-js` is present.
+ */
+.no-js button[type="button"] {
+	display:none;
 }
 
 /**
