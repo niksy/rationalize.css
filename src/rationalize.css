@@ -8,14 +8,10 @@
  * Use easier method for layout creation and modification.
  */
 html {
-	-webkit-box-sizing:border-box;
-	   -moz-box-sizing:border-box;
-	        box-sizing:border-box;
+	box-sizing:border-box;
 }
 *, *:before, *:after {
-	-webkit-box-sizing:inherit;
-	   -moz-box-sizing:inherit;
-	        box-sizing:inherit;
+	box-sizing:inherit;
 }
 
 /**
@@ -98,16 +94,7 @@ object, embed {
 /**
  * Display ellipsis in placeholders so they don’t get cut off.
  */
-::-webkit-input-placeholder {
-	text-overflow:ellipsis;
-}
-:-moz-placeholder {
-	text-overflow:ellipsis;
-}
-::-moz-placeholder {
-	text-overflow:ellipsis;
-}
-:-ms-input-placeholder {
+::placeholder {
 	text-overflow:ellipsis;
 }
 
@@ -118,8 +105,7 @@ object, embed {
 input:invalid,
 textarea:invalid {
 	outline:0; /* 1 */
-	-webkit-box-shadow:0 0 4px #f00; /* 1 */
-	        box-shadow:0 0 4px #f00; /* 2 */
+	box-shadow:0 0 4px #f00; /* 2 */
 }
 
 /**
@@ -127,9 +113,7 @@ textarea:invalid {
  * consistent with the rest of form elements.
  */
 input[type="search"] {
-	-webkit-box-sizing:border-box;
-	   -moz-box-sizing:border-box;
-	        box-sizing:border-box;
+	box-sizing:border-box;
 }
 
 /**

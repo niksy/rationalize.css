@@ -15,7 +15,7 @@ module.exports = function ( grunt ) {
 					banner: '<%= meta.banner %>\n'
 				},
 				files: {
-					'dist/rationalize.css': ['src/rationalize.css'],
+					'dist/rationalize.css': ['src/out/rationalize.css'],
 					'dist/rationalize.oldie.css': ['src/rationalize.oldie.css']
 				}
 			}
@@ -27,7 +27,7 @@ module.exports = function ( grunt ) {
 			},
 			dist: {
 				files: {
-					'dist/rationalize.min.css': ['src/rationalize.css']
+					'dist/rationalize.min.css': ['src/out/rationalize.css']
 				}
 			},
 			distIE: {
@@ -63,6 +63,16 @@ module.exports = function ( grunt ) {
 					'src/**/*.css'
 				]
 			}
+		},
+
+		autoprefixer: {
+			dist: {
+				options: {
+					browsers: ['last 2 versions', 'Firefox >= 20', 'iOS >= 5', 'Android >= 2', 'Explorer 8']
+				},
+				src: 'src/rationalize.css',
+				dest: 'src/out/rationalize.css'
+			}
 		}
 
 	});
@@ -70,10 +80,11 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-bump');
 
 	grunt.registerTask('stylecheck', ['csslint:main']);
-	grunt.registerTask('default', ['concat','cssmin']);
+	grunt.registerTask('default', ['autoprefixer','concat','cssmin']);
 	grunt.registerTask('releasePatch', ['bump-only:patch', 'default', 'bump-commit']);
 	grunt.registerTask('releaseMinor', ['bump-only:minor', 'default', 'bump-commit']);
 	grunt.registerTask('releaseMajor', ['bump-only:major', 'default', 'bump-commit']);
