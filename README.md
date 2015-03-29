@@ -5,7 +5,9 @@ Opinionated additions to [Normalize](http://necolas.github.io/normalize.css/).
 ## Installation
 
 ```sh
-bower install niksy/rationalize.css
+npm install rationalize.css --save
+
+bower install rationalize.css --save
 ```
 
 ## Usage
