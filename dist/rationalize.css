@@ -1,4 +1,4 @@
-/*! rationalize.css 0.1.2 - Opinionated additions to Normalize. | Author: Ivan Nikolić, 2014 | License: MIT */
+/*! rationalize.css 1.0.0 - Opinionated additions to Normalize. | Author: Ivan Nikolić <niksy5@gmail.com> (http://ivannikolic.com/), 2015 | License: MIT */
 /**
  * Use easier method for layout creation and modification.
  */
@@ -91,6 +91,15 @@ object, embed {
  */
 
 /**
+ * Inherit text properties from parent element for form elements.
+ */
+select, button,
+input, textarea {
+	font-size:inherit; font-family:inherit;
+	color:inherit;
+}
+
+/**
  * Display ellipsis in placeholders so they don’t get cut off.
  */
 ::-webkit-input-placeholder {
@@ -137,9 +146,11 @@ legend {
 /**
  * 1. Constraint `textarea` to vertical resize only.
  * 2. A hack for HTML5 `contenteditable` attribute on mobile.
+ * 3. Blink adds some vertical spacing at the bottom.
  */
 textarea {
 	resize:vertical; /* 1 */
+	vertical-align:bottom; /* 3 */
 }
 textarea[contenteditable] {
 	-webkit-appearance:none; /* 2 */
@@ -193,7 +204,9 @@ input[type="image"] {
 /**
  * Get IE 10 Snap Mode to play nicely with `meta` viewport.
  */
-@-webkit-viewport { width:device-width; }
-   @-moz-viewport { width:device-width; }
-    @-ms-viewport { width:device-width; }
-     @-o-viewport { width:device-width; }
+@-ms-viewport {
+	width:device-width;
+}
+@viewport {
+	width:device-width;
+}
