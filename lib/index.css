@@ -126,9 +126,11 @@ legend {
 /**
  * 1. Constraint `textarea` to vertical resize only.
  * 2. A hack for HTML5 `contenteditable` attribute on mobile.
+ * 3. Blink adds some vertical spacing at the bottom.
  */
 textarea {
 	resize:vertical; /* 1 */
+	vertical-align:bottom; /* 3 */
 }
 textarea[contenteditable] {
 	-webkit-appearance:none; /* 2 */
