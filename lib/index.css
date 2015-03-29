@@ -92,6 +92,15 @@ object, embed {
  */
 
 /**
+ * Inherit text properties from parent element for form elements.
+ */
+select, button,
+input, textarea {
+	font-size:inherit; font-family:inherit;
+	color:inherit;
+}
+
+/**
  * Display ellipsis in placeholders so they don’t get cut off.
  */
 ::placeholder {

@@ -25,3 +25,8 @@
 .Test-sandbox-placeholderEllipsis input {
 	width:100px;
 }
+
+.Test-sandbox-customTextProps {
+	font-family:"Comic Sans MS";
+	color:red;
+}
