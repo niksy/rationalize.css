@@ -3,10 +3,10 @@
   "version": "0.1.2",
   "description": "Opinionated additions to Normalize.",
   "authors": [
-    "Ivan Nikolić"
+    "Ivan Nikolić <niksy5@gmail.com> (http://ivannikolic.com/)"
   ],
   "license": "MIT",
-  "main": ["dist/rationalize.min.css","dist/rationalize.oldie.min.css"],
+  "main": "dist/rationalize.css",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -14,11 +14,12 @@
     "test",
     "tests",
     "src",
+    "lib",
     "Gruntfile.js",
     "package.json"
   ],
   "dependencies": {
-    "normalize-css": "~3.0.1"
+    "normalize-css": "~3.0.2"
   },
   "devDependencies": {
     "suit-components-test": "~0.2.1"

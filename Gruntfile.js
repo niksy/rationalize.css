@@ -1,3 +1,5 @@
+/* jshint node:true */
+
 module.exports = function ( grunt ) {
 
 	grunt.initConfig({
@@ -5,18 +7,17 @@ module.exports = function ( grunt ) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		meta: {
-			banner: '/*! <%= pkg.name %> <%= pkg.version %> - <%= pkg.description %> | Author: <%= pkg.author %>, <%= grunt.template.today("yyyy") %> | License: <%= pkg.license %> */'
+			banner: '/*! <%= pkg.name %> <%= pkg.version %> - <%= pkg.description %> | Author: <%= pkg.author %>, <%= grunt.template.today("yyyy") %> | License: <%= pkg.license %> */\n'
 		},
 
 		concat: {
 			dist: {
 				options: {
 					stripBanners: true,
-					banner: '<%= meta.banner %>\n'
+					banner: '<%= meta.banner %>'
 				},
 				files: {
-					'dist/rationalize.css': ['src/out/rationalize.css'],
-					'dist/rationalize.oldie.css': ['src/rationalize.oldie.css']
+					'dist/<%= pkg.name %>': ['compiled/<%= pkg.main %>']
 				}
 			}
 		},
@@ -27,15 +28,7 @@ module.exports = function ( grunt ) {
 			},
 			dist: {
 				files: {
-					'dist/rationalize.min.css': ['src/out/rationalize.css']
-				}
-			},
-			distIE: {
-				options: {
-					compatibility: 'ie7'
-				},
-				files: {
-					'dist/rationalize.oldie.min.css': ['src/rationalize.oldie.css']
+					'dist/rationalize.min.css': ['compiled/<%= pkg.main %>']
 				}
 			}
 		},
@@ -54,39 +47,93 @@ module.exports = function ( grunt ) {
 			}
 		},
 
-		csslint: {
-			main: {
-				options: {
-					csslintrc: '.csslintrc'
-				},
-				src: [
-					'src/**/*.css'
-				]
-			}
-		},
-
 		autoprefixer: {
 			dist: {
 				options: {
 					browsers: ['last 2 versions', 'Firefox >= 20', 'iOS >= 5', 'Android >= 2', 'Explorer 8']
 				},
-				src: 'src/rationalize.css',
-				dest: 'src/out/rationalize.css'
+				src: '<%= pkg.main %>',
+				dest: 'compiled/<%= pkg.main %>'
+			}
+		},
+
+		'compile-handlebars': {
+			test: {
+				templateData: {
+					bower: '../../../bower_components',
+					compiled: '../../../compiled',
+					assets: 'assets',
+					main: '<%= pkg.main %>'
+				},
+				partials: 'test/manual/templates/partials/**/*.hbs',
+				template: 'test/manual/templates/*.hbs',
+				output: 'compiled/test/manual/*.html'
+			}
+		},
+
+		copy: {
+			test: {
+				files:[{
+					expand: true,
+					cwd: 'test/manual/assets/',
+					src: ['**'],
+					dest: 'compiled/test/manual/assets/'
+				}]
+			},
+			css: {
+				options: {
+					process: function ( content, srcpath ) {
+						return content.replace(/\*\/\n/g,'*/');
+					}
+				},
+				files: {
+					'dist/rationalize.min.css': ['dist/rationalize.min.css']
+				}
+			}
+		},
+
+		connect: {
+			test:{
+				options: {
+					port: 4242,
+					open: true
+				}
+			}
+		},
+
+		concurrent: {
+			options: {
+				logConcurrentOutput: true
+			},
+			test: ['watch','connect:test:keepalive']
+		},
+
+		watch: {
+			hbs: {
+				files: 'test/manual/**/*.hbs',
+				tasks: ['compile-handlebars:test']
+			},
+			css: {
+				files: ['<%= pkg.main %>'],
+				tasks: ['autoprefixer:dist']
 			}
 		}
 
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-csslint');
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-autoprefixer');
-	grunt.loadNpmTasks('grunt-bump');
+	require('load-grunt-tasks')(grunt);
 
-	grunt.registerTask('stylecheck', ['csslint:main']);
-	grunt.registerTask('default', ['autoprefixer','concat','cssmin']);
-	grunt.registerTask('releasePatch', ['bump-only:patch', 'default', 'bump-commit']);
-	grunt.registerTask('releaseMinor', ['bump-only:minor', 'default', 'bump-commit']);
-	grunt.registerTask('releaseMajor', ['bump-only:major', 'default', 'bump-commit']);
+	grunt.registerTask('test', function () {
+		var tasks = ['compile-handlebars:test','copy:test','autoprefixer:dist'];
+		if ( grunt.option('watch') ) {
+			tasks.push('concurrent:test');
+		}
+		grunt.task.run(tasks);
+	});
+
+	grunt.registerTask('default', ['autoprefixer', 'concat', 'cssmin', 'copy:css']);
+	grunt.registerTask('release:patch', ['bump-only:patch', 'default', 'bump-commit']);
+	grunt.registerTask('release:minor', ['bump-only:minor', 'default', 'bump-commit']);
+	grunt.registerTask('release:major', ['bump-only:major', 'default', 'bump-commit']);
 
 };

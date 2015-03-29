@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <title>rationalize.css test</title>
-    <meta name="viewport" content="initial-scale=1,width=device-width">
-    <link rel="stylesheet" href="../bower_components/suit-components-test/index.css">
-    <link rel="stylesheet" href="../src/rationalize.css">
-    <link rel="stylesheet" href="test.css" />
-  </head>
-  <body>
+{{> top title="rationalize.css tests"}}
+
     <div class="Test">
 
       <h1 class="Test-title">rationalize.css tests</h1>
@@ -47,7 +38,7 @@
       <h3 class="Test-it"><code>img</code> should be fluid and have <code>vertical-align:bottom</code></h3>
       <div class="Test-run">
         <div class="Test-sandbox-fluidImages">
-          <img src="assets/images/korcula.jpg" alt="Korčula" />
+          <img src="{{assets}}/images/korcula.jpg" alt="Korčula" />
         </div>
       </div>
       <h3 class="Test-it">Unreachable <code>img</code> should have italic alternative text</h3>
@@ -57,7 +48,7 @@
       <h3 class="Test-it">Images inside Google Maps shouldn’t be fluid</h3>
       <div class="Test-run">
         <div class="gm-style">
-          <img src="assets/images/korcula.jpg" alt="Korčula" />
+          <img src="{{assets}}/images/korcula.jpg" alt="Korčula" />
         </div>
       </div>
       <h3 class="Test-it"><code>object, embed</code> should have <code>vertical-align:bottom</code></h3>
@@ -132,5 +123,5 @@
       </div>
 
     </div>
-  </body>
-</html>
+
+{{> bottom}}
