@@ -182,7 +182,6 @@ input[type="image"] {
 /**
  * Get IE 10 Snap Mode to play nicely with `meta` viewport.
  */
-@-webkit-viewport { width:device-width; }
-   @-moz-viewport { width:device-width; }
-    @-ms-viewport { width:device-width; }
-     @-o-viewport { width:device-width; }
+@viewport {
+	width:device-width;
+}
