@@ -33,17 +33,14 @@ module.exports = function ( grunt ) {
 			}
 		},
 
-		bump: {
+		'update_json': {
 			options: {
-				files: ['package.json', 'bower.json'],
-				updateConfigs: ['pkg'],
-				commit: true,
-				commitMessage: 'Release %VERSION%',
-				commitFiles: ['-a'],
-				createTag: true,
-				tagName: '%VERSION%',
-				tagMessage: '',
-				push: false
+				indent: '  '
+			},
+			bower: {
+				src: 'package.json',
+				dest: 'bower.json',
+				fields: 'version'
 			}
 		},
 
@@ -131,9 +128,6 @@ module.exports = function ( grunt ) {
 		grunt.task.run(tasks);
 	});
 
-	grunt.registerTask('default', ['autoprefixer', 'concat', 'cssmin', 'copy:css']);
-	grunt.registerTask('release:patch', ['bump-only:patch', 'default', 'bump-commit']);
-	grunt.registerTask('release:minor', ['bump-only:minor', 'default', 'bump-commit']);
-	grunt.registerTask('release:major', ['bump-only:major', 'default', 'bump-commit']);
+	grunt.registerTask('build', ['autoprefixer', 'concat', 'cssmin', 'copy:css']);
 
 };

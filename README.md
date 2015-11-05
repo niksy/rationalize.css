@@ -2,6 +2,16 @@
 
 Opinionated additions to [Normalize](http://necolas.github.io/normalize.css/).
 
+Features:
+
+* Sane `box-sizing` model
+* Interactive elements with pointer cursor
+* Normalized invalid state for input elements
+* Normalized typography features for form elements
+* Responsive adjustments for embedded content such as images and
+* Default colors for text and background
+* …
+
 ## Installation
 
 ```sh
@@ -12,7 +22,9 @@ bower install rationalize.css --save
 
 ## Usage
 
-This package serves as addition to Normalize, so it should be included after Normalize.
+1. Include Normalize.
+1. Include Rationalize.
+1. Enjoy!
 
 ## Browser support
 
