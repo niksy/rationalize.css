@@ -12,12 +12,10 @@ Features:
 * Default colors for text and background
 * …
 
-## Installation
+## Install
 
 ```sh
 npm install rationalize.css --save
-
-bower install rationalize.css --save
 ```
 
 ## Usage
@@ -25,6 +23,14 @@ bower install rationalize.css --save
 1. Include Normalize.
 1. Include Rationalize.
 1. Enjoy!
+
+```css
+// Module style usage
+```
+
+## Test
+
+For manual tests, run `npm test -- --watch` and open <http://localhost:9000/> in your browser.
 
 ## Browser support
 

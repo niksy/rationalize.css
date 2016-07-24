@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Basic</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<link rel="stylesheet" href="basic/index.css" />
+</head>
+<body>
+	<div class="Test">
+
+	  <h1 class="Test-title">rationalize.css tests</h1>
+
+	  <h2 class="Test-describe">Base</h2>
+	  <h3 class="Test-it">All elements should have <code>box-sizing:border-box</code> and dimensions should be 100x100 (for generated content 30x30)</h3>
+	  <div class="Test-run">
+		<div class="Test-sandbox-boxSizing"></div>
+	  </div>
+	  <h3 class="Test-it"><code>box-sizing:content-box</code> elements and their descendants should have default box model and dimensions should be 130x130 (for generated content 50x50)</h3>
+	  <div class="Test-run">
+		<div class="Test-sandbox-boxSizingDefault">
+		  <div class="Test-sandbox-boxSizing"></div>
+		</div>
+	  </div>
+	  <h3 class="Test-it"><code>html</code> should have <code>overflow-y:scroll</code> and black text color</h3>
+	  <div class="Test-run">
+	  </div>
+	  <h3 class="Test-it"><code>body</code> should have white background color</h3>
+	  <div class="Test-run">
+	  </div>
+
+	  <h2 class="Test-describe">Typography</h2>
+	  <h3 class="Test-it"><code>abbr[title], acronym[title], dfn</code> should have <code>cursor:help</code></h3>
+	  <div class="Test-run">
+		<abbr title="">abbr title</abbr><br />
+		<acronym title="">acronym title</acronym><br />
+		<dfn>dfn</dfn><br />
+	  </div>
+	  <h3 class="Test-it"><code>hr</code> should be rationalized</h3>
+	  <div class="Test-run">
+		<hr />
+	  </div>
+
+	  <h2 class="Test-describe">Embedded content</h2>
+	  <h3 class="Test-it"><code>img</code> should be fluid and have <code>vertical-align:bottom</code></h3>
+	  <div class="Test-run">
+		<div class="Test-sandbox-fluidImages">
+		  <img src="assets/images/korcula.jpg" alt="Korčula" />
+		</div>
+	  </div>
+	  <h3 class="Test-it">Unreachable <code>img</code> should have italic alternative text</h3>
+	  <div class="Test-run">
+		<img src="example.jpg" width="300" height="300" alt="Unreachable image" />
+	  </div>
+	  <h3 class="Test-it">Images inside Google Maps shouldn’t be fluid</h3>
+	  <div class="Test-run">
+		<div class="gm-style">
+		  <img src="assets/images/korcula.jpg" alt="Korčula" />
+		</div>
+	  </div>
+	  <h3 class="Test-it"><code>object, embed</code> should have <code>vertical-align:bottom</code></h3>
+	  <div class="Test-run">
+		<object data="" type=""></object>
+		<embed src="" type="" />
+	  </div>
+
+	  <h2 class="Test-describe">Forms</h2>
+	  <h3 class="Test-it">Basic form elements should inherit parent element values</h3>
+	  <div class="Test-run">
+		<div class="Test-sandbox-customTextProps">
+		  <select><option value="1">Lorem ipsum</option></select>
+		  <button type="submit">Lorem ipsum</button>
+		  <input type="text" value="Lorem ipsum" />
+		  <textarea cols="5" rows="5">Lorem ipsum</textarea>
+		</div>
+	  </div>
+	  <h3 class="Test-it">Placeholder in inputs should be shortened with ellipsis if it doesn’t fit</h3>
+	  <div class="Test-run">
+		<div class="Test-sandbox-placeholderEllipsis">
+		  <input type="text" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non lacus at justo venenatis ultrices. Maecenas in sapien dictum, posuere nibh ut, lacinia turpis." />
+		</div>
+	  </div>
+	  <h3 class="Test-it"><code>input, textarea</code> should have normalize invalid styling</h3>
+	  <div class="Test-run">
+		<input type="number" value="aaa" />
+		<textarea cols="30" rows="10"></textarea>
+	  </div>
+	  <h3 class="Test-it"><code>input[type="search"]</code> should have <code>box-sizing:border-box;</code></h3>
+	  <div class="Test-run">
+		<input type="search" />
+	  </div>
+	  <h3 class="Test-it"><code>legend</code> should have <code>display:table;</code></h3>
+	  <div class="Test-run">
+		<form action="">
+		  <fieldset>
+			<legend>Title</legend>
+		  </fieldset>
+		</form>
+	  </div>
+	  <h3 class="Test-it"><code>textarea</code> should only allow vertical resizing</h3>
+	  <div class="Test-run">
+		<textarea cols="30" rows="10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non lacus at justo venenatis ultrices. Maecenas in sapien dictum, posuere nibh ut, lacinia turpis. In mauris arcu, ornare semper convallis id, feugiat vel leo. Integer et enim et tortor dignissim aliquet. Nulla accumsan elit nec mi rutrum suscipit ut sed dui. Vivamus tempus mauris sit amet imperdiet suscipit. Nunc ac fringilla ante, a sollicitudin diam. Integer eu eros in ante adipiscing accumsan id et nulla. Fusce nec commodo eros. Duis nulla risus, eleifend in faucibus non, lacinia eget dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam tortor quam, tincidunt ac diam eu, varius porta dui. Ut neque magna, suscipit ac sapien eu, facilisis condimentum urna. Fusce ultricies vehicula felis nec euismod. Sed vulputate, lectus et scelerisque sodales, nunc velit dapibus turpis, ac volutpat leo felis eu nulla.</textarea>
+	  </div>
+	  <h3 class="Test-it"><code>textarea</code> should not have any vertical spacing</h3>
+	  <div class="Test-run">
+		<textarea cols="30" rows="10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non lacus at justo venenatis ultrices. Maecenas in sapien dictum, posuere nibh ut, lacinia turpis. In mauris arcu, ornare semper convallis id, feugiat vel leo. Integer et enim et tortor dignissim aliquet. Nulla accumsan elit nec mi rutrum suscipit ut sed dui. Vivamus tempus mauris sit amet imperdiet suscipit. Nunc ac fringilla ante, a sollicitudin diam. Integer eu eros in ante adipiscing accumsan id et nulla. Fusce nec commodo eros. Duis nulla risus, eleifend in faucibus non, lacinia eget dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam tortor quam, tincidunt ac diam eu, varius porta dui. Ut neque magna, suscipit ac sapien eu, facilisis condimentum urna. Fusce ultricies vehicula felis nec euismod. Sed vulputate, lectus et scelerisque sodales, nunc velit dapibus turpis, ac volutpat leo felis eu nulla.</textarea>
+	  </div>
+	  <h3 class="Test-it"><code>select</code> should have white background color</h3>
+	  <div class="Test-run">
+		<select>
+		  <option value="1">Option 1</option>
+		  <option value="2">Option 2</option>
+		  <option value="3">Option 3</option>
+		</select>
+	  </div>
+	  <h3 class="Test-it"><code>select, label[for], label input, input[type="image"]</code> should have pointer as cursor</h3>
+	  <div class="Test-run">
+		<select>
+		  <option value="1">Option 1</option>
+		  <option value="2">Option 2</option>
+		  <option value="3">Option 3</option>
+		</select><br />
+		<label for="">label for</label><br />
+		<label><input type="checkbox" />input label</label><br />
+		<input type="image" value="input image" />
+	  </div>
+
+	  <h2 class="Test-describe">Accessibility</h2>
+	  <h3 class="Test-it">Focused elements with custom tabindex should be visually emphasized</h3>
+	  <div class="Test-run">
+		<div tabindex="0">custom tabindex</div>
+	  </div>
+	  <h3 class="Test-it">Hide <code>[type="button"]</code> when <code>.no-js</code> is present.</h3>
+	  <div class="Test-run">
+		<p><code>button[type="button"]</code> is hidden below. <code>iframe</code> <code>html</code> tag doesn’t have <code>no-js</code> class so it should display <code>button</code>.</p>
+		<button type="button">Button</button>
+		<iframe src="javascript: '<html><body><button type=button>Button</button></body></html>'"></iframe>
+	  </div>
+
+	  <h2 class="Test-describe">Responsive</h2>
+	  <h3 class="Test-it"><code>@viewport</code> should be set to <code>width=device-viewport</code></h3>
+	  <div class="Test-run">
+	  </div>
+
+	</div>
+
+	<!--<script src="basic/index.js"></script>-->
+
+</body>
+</html>

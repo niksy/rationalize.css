@@ -1,0 +1,34 @@
+@import 'suitcss-components-test';
+@import 'normalize.css';
+@import '../../../../index.css';
+
+.Test-sandbox-boxSizing {
+	width: 100px; height: 100px;
+	background: red;
+	border: 5px solid green;
+	padding: 10px;
+}
+.Test-sandbox-boxSizing:before {
+	content: '';
+	display: block;
+	width: 30px; height: 30px;
+	background: pink;
+	border: 5px solid blue;
+	padding: 5px;
+}
+.Test-sandbox-boxSizingDefault {
+	box-sizing: content-box;
+}
+
+.Test-sandbox-fluidImages {
+	width: 200px;
+}
+
+.Test-sandbox-placeholderEllipsis input {
+	width: 100px;
+}
+
+.Test-sandbox-customTextProps {
+	font-family: 'Comic Sans MS';
+	color: red;
+}

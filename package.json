@@ -2,46 +2,60 @@
   "name": "rationalize.css",
   "version": "1.0.1",
   "description": "Opinionated additions to Normalize.",
+  "main": "index.js",
   "author": "Ivan Nikolić <niksy5@gmail.com> (http://ivannikolic.com/)",
   "license": "MIT",
-  "main": "lib/index.css",
-  "style": "lib/index.css",
+  "style": "index.css",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "grunt test --watch",
-    "version": "grunt update_json && grunt build && git add -A",
-    "publish": "git push && git push --tags"
+    "lint": "eslint index.js && stylelint {index.css,test/**/*.css}",
+    "test": "npm run lint",
+    "test:manual:local": "gulp test:local:manual --watch"
   },
   "dependencies": {
-    "normalize.css": "^3.0.2"
+    "normalize.css": "^4.2.0"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-autoprefixer": "^2.2.0",
-    "grunt-compile-handlebars": "^1.0.1",
-    "grunt-concurrent": "^1.0.0",
-    "grunt-contrib-concat": "^0.4.0",
-    "grunt-contrib-connect": "^0.9.0",
-    "grunt-contrib-copy": "^0.8.0",
-    "grunt-contrib-cssmin": "^0.10.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-update-json": "^0.2.1",
-    "load-grunt-tasks": "^3.1.0",
-    "suitcss-components-test": "^0.2.1"
+    "browserify": "^13.0.1",
+    "del": "^2.2.0",
+    "eslint": "^3.1.1",
+    "eslint-config-niksy": "^3.0.1",
+    "event-stream": "^3.3.2",
+    "globby": "^4.1.0",
+    "gulp": "^3.9.1",
+    "gulp-debug": "^2.1.2",
+    "gulp-nunjucks-render": "^2.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "local-web-server": "^1.2.4",
+    "minimist": "^1.2.0",
+    "opn": "^4.0.2",
+    "postcss-import": "^8.1.2",
+    "stylelint": "^7.0.3",
+    "stylelint-config-niksy": "^3.0.1",
+    "suitcss-components-test": "^1.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/niksy/rationalize.css.git"
+  "engines": {
+    "node": ">=4"
   },
   "keywords": [
+    "css",
     "normalize",
-    "rationalize",
-    "css"
+    "rationalize"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niksy/rationalize.css.git"
+  },
   "bugs": {
     "url": "https://github.com/niksy/rationalize.css/issues"
   },
-  "homepage": "https://github.com/niksy/rationalize.css"
+  "homepage": "https://github.com/niksy/rationalize.css#readme"
 }
