@@ -8,10 +8,12 @@
  * Use easier method for layout creation and modification.
  */
 html {
-	box-sizing:border-box;
+	box-sizing: border-box;
 }
-*, *:before, *:after {
-	box-sizing:inherit;
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
 }
 
 /**
@@ -19,8 +21,8 @@ html {
  * 2. Normalize global text color.
  */
 html {
-	overflow-y:scroll; /* 1 */
-	color:#000; /* 2 */
+	overflow-y: scroll; /* 1 */
+	color: #000; /* 2 */
 }
 
 /**
@@ -28,7 +30,7 @@ html {
  * It will propagate to `html` element.
  */
 body {
-	background-color:#fff;
+	background-color: #fff;
 }
 
 /**
@@ -40,15 +42,17 @@ body {
 /**
  * Add help cursor for some elements.
  */
-abbr[title], acronym[title], dfn {
-	cursor:help;
+abbr[title],
+acronym[title],
+dfn {
+	cursor: help;
 }
 
 /**
  * Improve horizontal rule display.
  */
 hr {
-	display:block; padding:0; margin:1em 0;
+	display: block; padding: 0; margin: 1em 0;
 }
 
 /**
@@ -64,9 +68,9 @@ hr {
  *    proportional to the width.
  */
 img {
-	max-width:100%; height:auto; /* 3 */
-	font-style:italic; /* 1 */
-	vertical-align:bottom; /* 2 */
+	max-width: 100%; height: auto; /* 3 */
+	font-style: italic; /* 1 */
+	vertical-align: bottom; /* 2 */
 }
 
 /**
@@ -74,15 +78,15 @@ img {
  * so we have to reset them to inital state
  */
 .gm-style img {
-	max-width:none;
-	vertical-align:baseline;
+	max-width: none;
+	vertical-align: baseline;
 }
 
 /**
  * Remove the gap between elements and the bottom of their containers.
  */
 object, embed {
-	vertical-align:bottom;
+	vertical-align: bottom;
 }
 
 /**
@@ -95,7 +99,7 @@ object, embed {
  * Contain overflow in all browsers.
  */
 pre {
-	overflow:auto;
+	overflow: auto;
 }
 
 /**
@@ -109,15 +113,17 @@ pre {
  * the UA stylesheet.
  */
 input {
-	line-height:normal;
+	line-height: normal;
 }
 
 /**
  * Inherit text properties from parent element for form elements.
  */
-select, button,
-input, textarea {
-	color:inherit;
+select,
+button,
+input,
+textarea {
+	color: inherit;
 }
 
 /**
@@ -126,9 +132,9 @@ input, textarea {
  *    https://github.com/necolas/normalize.css/pull/603#issuecomment-230118874
  */
 ::placeholder {
-	opacity:1; /* 2 */
-	text-overflow:ellipsis; /* 1 */
-	color:#a9a9a9; /* 2 */
+	opacity: 1; /* 2 */
+	text-overflow: ellipsis; /* 1 */
+	color: #a9a9a9; /* 2 */
 }
 
 /**
@@ -137,8 +143,8 @@ input, textarea {
  */
 input:invalid,
 textarea:invalid {
-	outline:0; /* 1 */
-	box-shadow:0 0 4px #f00; /* 2 */
+	outline: 0; /* 1 */
+	box-shadow: 0 0 4px #f00; /* 2 */
 }
 
 /**
@@ -146,7 +152,7 @@ textarea:invalid {
  * consistent with the rest of form elements.
  */
 input[type="search"] {
-	box-sizing:border-box;
+	box-sizing: border-box;
 }
 
 /**
@@ -155,11 +161,11 @@ input[type="search"] {
  * 3. Blink adds some vertical spacing at the bottom.
  */
 textarea {
-	resize:vertical; /* 1 */
-	vertical-align:bottom; /* 3 */
+	resize: vertical; /* 1 */
+	vertical-align: bottom; /* 3 */
 }
 textarea[contenteditable] {
-	-webkit-appearance:none; /* 2 */
+	-webkit-appearance: none; /* 2 */
 }
 
 /**
@@ -167,7 +173,7 @@ textarea[contenteditable] {
  * use it as default.
  */
 select {
-	background-color:#fff;
+	background-color: #fff;
 }
 
 /**
@@ -181,14 +187,14 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-	cursor:pointer;
+	cursor: pointer;
 }
 
 /**
  * Restore the default cursor to disabled elements unset by the previous rule.
  */
 [disabled] {
-	cursor:default;
+	cursor: default;
 }
 
 /**
@@ -201,13 +207,13 @@ button,
  * Remove most spacing between table cells.
  */
 table {
-	border-collapse:collapse;
-	border-spacing:0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 td,
 th {
-	padding:0;
+	padding: 0;
 }
 
 /**
@@ -221,14 +227,14 @@ th {
  * be keyboard accessible.
  */
 [tabindex="0"]:focus {
-	outline:thin dotted;
+	outline: thin dotted;
 }
 
 /**
  * Hide `[type="button"] when `.no-js` is present.
  */
 .no-js button[type="button"] {
-	display:none;
+	display: none;
 }
 
 /**
@@ -241,5 +247,5 @@ th {
  * Get IE 10 Snap Mode to play nicely with `meta` viewport.
  */
 @viewport {
-	width:device-width;
+	width: device-width;
 }

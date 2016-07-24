@@ -1,5 +1,7 @@
 # rationalize.css
 
+[![Build Status][ci-img]][ci] [![Browserstack][browserstack-img]][browserstack]
+
 Opinionated additions to [Normalize](http://necolas.github.io/normalize.css/).
 
 Features:
@@ -10,7 +12,6 @@ Features:
 * Normalized typography features for form elements
 * Responsive adjustments for embedded content such as images and
 * Default colors for text and background
-* …
 
 ## Install
 
@@ -20,12 +21,9 @@ npm install rationalize.css --save
 
 ## Usage
 
-1. Include Normalize.
-1. Include Rationalize.
-1. Enjoy!
-
 ```css
-// Module style usage
+@import url('normalize.css');
+@import url('rationalize.css');
 ```
 
 ## Test
@@ -39,3 +37,8 @@ Tested in IE8+ and all modern browsers.
 ## License
 
 MIT © [Ivan Nikolić](http://ivannikolic.com)
+
+[ci]: https://travis-ci.org/niksy/rationalize.css
+[ci-img]: https://img.shields.io/travis/niksy/rationalize.css.svg
+[browserstack]: https://www.browserstack.com/
+[browserstack-img]: https://cdn.rawgit.com/niksy/c73069b66d20e2e0005dc8479c125fbd/raw/f644159e3f5f07291f98f59a44146735e9962e0d/browserstack.svg

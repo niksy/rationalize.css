@@ -10,8 +10,10 @@
     "test": "test"
   },
   "scripts": {
-    "lint": "eslint index.js && stylelint {index.css,test/**/*.css}",
-    "test": "npm run lint",
+    "lint": "eslint {test/**/*}.js && stylelint {index.css,test/**/*.css}",
+    "test": "npm run lint && npm run test:integration",
+    "test:integration": "gulp test:prepare && wdio",
+    "test:integration:local": "eval \"$(docker-machine env dev)\" && gulp test:prepare && wdio --local --host $(docker-machine ip dev)",
     "test:manual:local": "gulp test:local:manual --watch"
   },
   "dependencies": {
@@ -19,10 +21,12 @@
   },
   "devDependencies": {
     "browserify": "^13.0.1",
+    "browserstacktunnel-wrapper": "^1.4.2",
     "del": "^2.2.0",
     "eslint": "^3.1.1",
     "eslint-config-niksy": "^3.0.1",
     "event-stream": "^3.3.2",
+    "execa": "^0.4.0",
     "globby": "^4.1.0",
     "gulp": "^3.9.1",
     "gulp-debug": "^2.1.2",
@@ -31,8 +35,10 @@
     "gulp-postcss": "^6.1.1",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
+    "http-shutdown": "^1.0.3",
     "local-web-server": "^1.2.4",
     "minimist": "^1.2.0",
+    "mocha": "^2.5.3",
     "opn": "^4.0.2",
     "postcss-import": "^8.1.2",
     "stylelint": "^7.0.3",
@@ -40,7 +46,10 @@
     "suitcss-components-test": "^1.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0"
+    "watchify": "^3.7.0",
+    "wdio-mocha-framework": "^0.2.13",
+    "wdio-spec-reporter": "^0.0.2",
+    "webdriverio": "^4.0.9"
   },
   "engines": {
     "node": ">=4"
