@@ -87,9 +87,30 @@ object, embed {
 
 /**
  * =============================================================================
+ * Grouping content
+ * =============================================================================
+ */
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+	overflow:auto;
+}
+
+/**
+ * =============================================================================
  * Forms
  * =============================================================================
  */
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+	line-height:normal;
+}
 
 /**
  * Inherit text properties from parent element for form elements.
@@ -100,10 +121,14 @@ input, textarea {
 }
 
 /**
- * Display ellipsis in placeholders so they don’t get cut off.
+ * 1. Display ellipsis in placeholders so they don’t get cut off.
+ * 2. Correct the text style of placeholders in Chrome, Edge, and Safari
+ *    https://github.com/necolas/normalize.css/pull/603#issuecomment-230118874
  */
 ::placeholder {
-	text-overflow:ellipsis;
+	opacity:1; /* 2 */
+	text-overflow:ellipsis; /* 1 */
+	color:#a9a9a9; /* 2 */
 }
 
 /**
@@ -151,8 +176,38 @@ select {
 select,
 label[for],
 label input,
-input[type="image"] {
+input[type="image"],
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
 	cursor:pointer;
+}
+
+/**
+ * Restore the default cursor to disabled elements unset by the previous rule.
+ */
+[disabled] {
+	cursor:default;
+}
+
+/**
+ * =============================================================================
+ * Tables
+ * =============================================================================
+ */
+
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+td,
+th {
+	padding:0;
 }
 
 /**
