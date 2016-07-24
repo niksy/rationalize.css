@@ -96,7 +96,6 @@ object, embed {
  */
 select, button,
 input, textarea {
-	font-size:inherit; font-family:inherit;
 	color:inherit;
 }
 
@@ -123,13 +122,6 @@ textarea:invalid {
  */
 input[type="search"] {
 	box-sizing:border-box;
-}
-
-/**
- * Line wrap text in `legend` for IE.
- */
-legend {
-	display:table;
 }
 
 /**
