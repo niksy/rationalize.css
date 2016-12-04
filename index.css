@@ -186,7 +186,8 @@ input[type="image"],
 button,
 [type="button"],
 [type="reset"],
-[type="submit"] {
+[type="submit"],
+[role="button"] {
 	cursor: pointer;
 }
 
