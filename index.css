@@ -109,6 +109,26 @@ pre {
  */
 
 /**
+ * 1. Change font properties to `inherit` in all browsers (opinionated).
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font: inherit; /* 1 */
+}
+
+/**
+ * Restore the font weight unset by the previous rule.
+ */
+
+optgroup {
+	font-weight: bold;
+}
+
+/**
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
