@@ -148,14 +148,6 @@ textarea:invalid {
 }
 
 /**
- * Give input@type="search" box sizing of border-box to have it visually
- * consistent with the rest of form elements.
- */
-input[type="search"] {
-	box-sizing: border-box;
-}
-
-/**
  * 1. Constraint `textarea` to vertical resize only.
  * 2. A hack for HTML5 `contenteditable` attribute on mobile.
  * 3. Blink adds some vertical spacing at the bottom.
