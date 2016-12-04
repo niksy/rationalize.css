@@ -233,6 +233,16 @@ th {
 	outline: none;
 }
 
+/*
+ * Change the cursor on disabled, not-editable, or otherwise
+ * inoperable elements.
+ */
+
+[aria-disabled="true"] {
+	cursor: default;
+	pointer-events: none;
+}
+
 /**
  * Hide `[type="button"] when `.no-js` is present.
  */
