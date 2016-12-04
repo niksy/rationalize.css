@@ -28,7 +28,8 @@ npm install rationalize.css --save
 
 ## Test
 
-For manual tests, run `npm test -- --watch` and open <http://localhost:9000/> in your browser.
+For local integration tests, run `npm run test:integration:local`.
+
 
 ## Browser support
 
