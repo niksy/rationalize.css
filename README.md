@@ -26,6 +26,14 @@ npm install rationalize.css --save
 @import url('rationalize.css');
 ```
 
+### Starting styles
+
+If you want to apply set of sensible starting styles, import `start.css` to your project:
+
+```css
+@import url('rationalize.css/start.css');
+```
+
 ## Test
 
 For local integration tests, run `npm run test:integration:local`.
