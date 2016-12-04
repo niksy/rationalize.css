@@ -12,6 +12,7 @@ Features:
 * Normalized typography features for form elements
 * Responsive adjustments for embedded content such as images and
 * Default colors for text and background
+* […and much more](https://github.com/niksy/rationalize.css/blob/master/index.css)
 
 ## Install
 
@@ -22,9 +23,10 @@ npm install rationalize.css --save
 ## Usage
 
 ```css
-@import url('normalize.css');
 @import url('rationalize.css');
 ```
+
+If you use [PostCSS](https://github.com/postcss/postcss) and plugin like [postcss-import](https://github.com/postcss/postcss-import), Normalize is imported by default.
 
 ### Starting styles
 
@@ -38,10 +40,11 @@ If you want to apply set of sensible starting styles, import `start.css` to your
 
 For local integration tests, run `npm run test:integration:local`.
 
+For manual tests, run `npm run test:manual:local` and open <http://localhost:9000/> in your browser.
 
 ## Browser support
 
-Tested in IE8+ and all modern browsers.
+Tested in IE9+ and all modern browsers.
 
 ## License
 
