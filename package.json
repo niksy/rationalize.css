@@ -17,7 +17,7 @@
     "test:manual:local": "gulp test:local:manual --watch"
   },
   "dependencies": {
-    "normalize.css": "^4.2.0"
+    "normalize.css": "^5.0.0"
   },
   "devDependencies": {
     "@niksy/babayaga": "^0.1.1",
