@@ -1,5 +1,5 @@
 @import url('suitcss-components-test');
-@import url('../../../../index.css');
+@import url('../../index.css');
 
 .Test-sandbox-boxSizing {
 	width: 100px; height: 100px;

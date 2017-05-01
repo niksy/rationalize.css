@@ -41,7 +41,7 @@ gulp.task('test:cleanup', () => {
 
 gulp.task('test:markup', ['test:cleanup'], () => {
 	function bundle () {
-		return gulp.src('./test/manual/suite/**/*.html')
+		return gulp.src('./test/manual/**/*.html')
 				.pipe(plumber(handleError))
 				.pipe(nunjucks())
 				.pipe(plumber.stop())
@@ -49,14 +49,14 @@ gulp.task('test:markup', ['test:cleanup'], () => {
 				.pipe(debug({ title: 'Markup:' }));
 	}
 	if ( watch ) {
-		gulp.watch(['./test/manual/suite/**/*.html'], bundle);
+		gulp.watch(['./test/manual/**/*.html'], bundle);
 	}
 	return bundle();
 });
 
-gulp.task('test:style', ['test:cleanup'], function () {
+gulp.task('test:style', ['test:cleanup'], () => {
 	function bundle () {
-		return gulp.src(['./test/manual/suite/**/*.css', './*.css'])
+		return gulp.src('./test/manual/**/*.css')
 				.pipe(plumber(handleError))
 				.pipe(sourcemaps.init({
 					loadMaps: true
@@ -64,27 +64,28 @@ gulp.task('test:style', ['test:cleanup'], function () {
 				.pipe(postcss([
 					atImport()
 				]))
+				// Tasks
 				.pipe(sourcemaps.write())
 				.pipe(plumber.stop())
 				.pipe(gulp.dest('./test-dist'))
 				.pipe(debug({ title: 'Style:' }));
 	}
 	if ( watch ) {
-		gulp.watch(['./test/manual/suite/**/*.css', './*.css'], bundle);
+		gulp.watch(['./test/manual/**/*.css'], bundle);
 	}
 	return bundle();
 });
 
 gulp.task('test:script', ['test:cleanup'], () => {
 
-	return globby(['./test/manual/suite/**/*.js'])
+	return globby(['./test/manual/**/*.js'])
 		.then(( files ) => {
 			return files
 				.map(( file ) => {
 					const extname = path.extname(file);
 					const key = path.basename(file, extname);
 					const obj = {};
-					obj[`${path.dirname(file).split(path.sep).pop()}/${key}`] = file;
+					obj[`${file.replace('./test/manual/', '').replace(path.basename(file), '')}${key}`] = file;
 					return obj;
 				})
 				.reduce(( prev, next ) => {

@@ -1,6 +1,6 @@
 # rationalize.css
 
-[![Build Status][ci-img]][ci] [![Browserstack][browserstack-img]][browserstack]
+[![Build Status][ci-img]][ci] [![BrowserStack Status][browserstack-img]][browserstack]
 
 Opinionated additions to [Normalize](http://necolas.github.io/normalize.css/).
 
@@ -36,21 +36,21 @@ If you want to apply set of sensible starting styles, import `start.css` to your
 @import url('rationalize.css/start.css');
 ```
 
+## Browser support
+
+Tested in IE9+ and all modern browsers.
+
 ## Test
 
 For local integration tests, run `npm run test:integration:local`.
 
 For manual tests, run `npm run test:manual:local` and open <http://localhost:9000/> in your browser.
 
-## Browser support
-
-Tested in IE9+ and all modern browsers.
-
 ## License
 
 MIT © [Ivan Nikolić](http://ivannikolic.com)
 
 [ci]: https://travis-ci.org/niksy/rationalize.css
-[ci-img]: https://img.shields.io/travis/niksy/rationalize.css.svg
+[ci-img]: https://travis-ci.org/niksy/rationalize.css.svg?branch=master
 [browserstack]: https://www.browserstack.com/
-[browserstack-img]: https://cdn.rawgit.com/niksy/c73069b66d20e2e0005dc8479c125fbd/raw/f644159e3f5f07291f98f59a44146735e9962e0d/browserstack.svg
+[browserstack-img]: https://www.browserstack.com/automate/badge.svg?badge_key=VEhBZ0ZVMWliSGZzVExkcmZTUlBkaCs1bDdyRHllTmFRcXMzanJUd0tCaz0tLTErOGtUZDk1WHFzQjJrNW5tQUkyTnc9PQ==--41cb4dc771ca127384ccbc2b9e321b10e32f1957
