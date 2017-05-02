@@ -25,6 +25,7 @@ html {
 html {
 	overflow-y: scroll; /* 1 */
 	color: #000; /* 2 */
+	-ms-overflow-style: scrollbar; /* 1 */
 }
 
 /**
