@@ -11,9 +11,10 @@ html {
 }
 
 html,
-select,
 button,
 input,
+optgroup,
+select,
 textarea {
 	font-size: 100%; font-family: sans-serif;
 	color: #333;

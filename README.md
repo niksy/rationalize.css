@@ -2,7 +2,9 @@
 
 [![Build Status][ci-img]][ci] [![BrowserStack Status][browserstack-img]][browserstack]
 
-Opinionated additions to [Normalize](http://necolas.github.io/normalize.css/).
+Opinionated additions to [Normalize][normalize].
+
+It also includes [Opinionate][opinionate] for additional opinionated rules.
 
 Features:
 
@@ -26,7 +28,7 @@ npm install rationalize.css --save
 @import url('rationalize.css');
 ```
 
-If you use [PostCSS](https://github.com/postcss/postcss) and plugin like [postcss-import](https://github.com/postcss/postcss-import), Normalize is imported by default.
+If you use [PostCSS](https://github.com/postcss/postcss) and plugin like [postcss-import](https://github.com/postcss/postcss-import), Normalize and Opinionate are imported by default.
 
 ### Starting styles
 
@@ -54,3 +56,5 @@ MIT © [Ivan Nikolić](http://ivannikolic.com)
 [ci-img]: https://travis-ci.org/niksy/rationalize.css.svg?branch=master
 [browserstack]: https://www.browserstack.com/
 [browserstack-img]: https://www.browserstack.com/automate/badge.svg?badge_key=VEhBZ0ZVMWliSGZzVExkcmZTUlBkaCs1bDdyRHllTmFRcXMzanJUd0tCaz0tLTErOGtUZDk1WHFzQjJrNW5tQUkyTnc9PQ==--41cb4dc771ca127384ccbc2b9e321b10e32f1957
+[normalize]: http://necolas.github.io/normalize.css/
+[opinionate]: https://github.com/adamgruber/opinionate.css
