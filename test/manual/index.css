@@ -3,17 +3,17 @@
 
 .Test-sandbox-boxSizing {
 	width: 100px; height: 100px;
-	background: red;
-	border: 5px solid green;
 	padding: 10px;
+	border: 5px solid green;
+	background: red;
 }
 .Test-sandbox-boxSizing:before {
 	content: '';
 	display: block;
 	width: 30px; height: 30px;
-	background: pink;
-	border: 5px solid blue;
 	padding: 5px;
+	border: 5px solid blue;
+	background: pink;
 }
 .Test-sandbox-boxSizingDefault {
 	box-sizing: content-box;
