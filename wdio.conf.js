@@ -77,7 +77,7 @@ module.exports.config = Object.assign({
 	],
 	exclude: [],
 	maxInstances: 10,
-	sync: false,
+	sync: true,
 	logLevel: verbose ? 'verbose' : 'silent',
 	coloredLogs: true,
 	screenshotPath: './errorShots/',
