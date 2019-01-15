@@ -1,4 +1,7 @@
 {
+	"extends": [
+		"niksy/tests"
+	],
 	"globals": {
 		"browser": false
 	}

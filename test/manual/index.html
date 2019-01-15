@@ -5,7 +5,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>Basic</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-	<link rel="stylesheet" href="index.css" />
 </head>
 <body>
 
@@ -201,8 +200,9 @@
 	</div>
 	<h3 class="Test-it">Hide <code>[type="button"]</code> when <code>.no-js</code> is present.</h3>
 	<div class="Test-run">
-		<p><code>iframe</code> <code>html</code> tag has <code>.no-js</code> class so it should hide <code>button</code>.</p>
-		<iframe src="javascript: '<html class='no-js'><body><button type=button>Button</button></body></html>'"></iframe>
+		<div class="no-js">
+			<button type=button>Button</button>
+		</div>
 	</div>
 
 	<h2 class="Test-describe">Responsive</h2>
@@ -212,8 +212,6 @@
 	</div>
 
 	</div>
-
-	<!--<script src="index.js"></script>-->
 
 </body>
 </html>

@@ -3,6 +3,7 @@
 		"stylelint-config-niksy"
 	],
 	"rules": {
+		"property-no-vendor-prefix": null,
 		"selector-no-qualifying-type": [true, { "severity": "warning" }]
 	}
 }
