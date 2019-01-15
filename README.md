@@ -15,10 +15,10 @@ Features:
 ## Install
 
 ```sh
-npm install normalize@7 rationalize.css --save
+npm install normalize.css@7 rationalize.css --save
 ```
 
-If you don’t need IE9 support, install `normalize@latest`.
+If you don’t need IE9 support, install `normalize.css@latest`.
 
 ## Usage
 
