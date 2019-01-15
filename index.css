@@ -22,10 +22,12 @@ html {
 /**
  * 1. Display vertical scrollbar at all times.
  * 2. Normalize global text color.
+ * 3. Change the default font family in all browsers.
  */
 html {
 	overflow-y: scroll; /* 1 */
 	-ms-overflow-style: scrollbar; /* 1 */
+	font-family: sans-serif; /* 3 */
 	color: #000; /* 2 */
 }
 
@@ -121,7 +123,7 @@ pre {
  */
 
 /**
- * 1. Change font properties to `inherit` in all browsers (opinionated).
+ * 1. Change font properties to `inherit` in all browsers.
  */
 
 button,
@@ -220,6 +222,14 @@ button,
  */
 [disabled] {
 	cursor: default;
+}
+
+/**
+ * Change the border, margin, and padding in all browsers.
+ */
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
 }
 
 /**
